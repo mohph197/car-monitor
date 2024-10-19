@@ -11,7 +11,7 @@ export default function SideBarCategory({
     return (
         <div className="flex flex-col items-stretch">
             <h2 className="text-gray-500 font-semibold p-6">{title}</h2>
-            <ul className="flex flex-col items-stretch px-2">
+            <ul className="flex flex-col items-stretch px-2 gap-2">
                 {elements.map((element) => (
                     <SideBarElement key={element.name} element={element} />
                 ))}

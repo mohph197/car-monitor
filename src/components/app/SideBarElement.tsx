@@ -14,7 +14,7 @@ export default function SideBarElement({
         <li>
             <Link
                 href={element.route}
-                className={`flex flex-row gap-3 py-2 px-6 items-center rounded-xl hover:bg-[#E2E8F0] w-max ${
+                className={`flex flex-row gap-3 py-2 px-6 items-center min-w-max w-full rounded-xl hover:bg-[#E2E8F0] ${
                     pathname === element.route ? 'bg-[#E2E8F0]' : ''
                 }`}
             >
