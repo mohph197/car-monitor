@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Logo from '@/assets/logo.svg';
 import Link from 'next/link';
 import SideBarCategory from './SidaBarCategory';
-import { machines } from '@/config/consts';
+import { kpis, machines } from '@/config/consts';
 
 export default function SideBar() {
     return (
@@ -12,16 +12,11 @@ export default function SideBar() {
             </Link>
             <SideBarCategory
                 title="Main KPIs"
-                elements={[
-                    {
-                        name: 'Energy',
-                        icon: 'power.svg',
-                        route: '/kpis/energy',
-                    },
-                    { name: 'Energy', icon: 'power.svg', route: '/energy' },
-                    { name: 'Energy', icon: 'power.svg', route: '/energy' },
-                    { name: 'Energy', icon: 'power.svg', route: '/energy' },
-                ]}
+                elements={kpis.map((kpi) => ({
+                    name: kpi.name,
+                    icon: `${kpi.id}.svg`,
+                    route: `/home/kpis/${kpi.id}`,
+                }))}
             />
             <SideBarCategory
                 title="Machine Types"

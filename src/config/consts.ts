@@ -12,21 +12,12 @@ export const machines: MachineType[] = [
     { id: 'leak_test', name: 'Leak Test Machine' },
 ];
 
-// export const tabNames = [
-//     'Temperature',
-//     'Current',
-//     'Voltage',
-//     'Time',
-//     'Pressure',
-//     'Arm Position - X',
-//     'Arm Position - Y',
-//     'Arm Position - Z',
-//     'Wire Feed',
-//     'Gas Flow',
-//     'Weld Strength',
-//     'Vibration',
-//     'Power Consumption',
-// ];
+export const kpis = [
+    { id: 'energy', name: 'Energy' },
+    { id: 'performance', name: 'Performance' },
+    { id: 'repairs', name: 'Repairs' },
+    { id: 'defects', name: 'Defects' },
+];
 
 export const metrics = [
     { machine: 'welding', id: 'weld_temperature', name: 'Temperature' },
