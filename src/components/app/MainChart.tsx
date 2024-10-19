@@ -81,7 +81,7 @@ export default function MainChart({
 
         setChartData(data);
         setMachineColors(newMachineColors);
-    }, [machineData]);
+    }, [machineData, metric.id]);
 
     return (
         <div className="flex flex-col items-stretch">

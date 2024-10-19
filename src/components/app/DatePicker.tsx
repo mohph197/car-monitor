@@ -12,7 +12,6 @@ import {
     PopoverTrigger,
 } from '@/components/ui/popover';
 import { cn } from '@/lib/utils';
-import { DateRange } from 'react-day-picker';
 import { useContext } from 'react';
 import { MetricFilterContext } from '@/context/MetricFilterContext';
 

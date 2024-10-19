@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 // Install MynaUI Icons from mynaui.com/icons
-import { Spinner } from '@mynaui/icons-react';
+// import { Spinner } from '@mynaui/icons-react';
 
 interface SpinnerProps {
     size?: string;
@@ -47,13 +47,13 @@ const fillClasses = {
     white: 'fill-background',
 } as FillProps;
 
-const strokeClasses = {
-    slate: 'stroke-foreground',
-    blue: 'stroke-blue-500',
-    red: 'stroke-red-500',
-    green: 'stroke-emerald-500',
-    white: 'stroke-background',
-} as StrokeProps;
+// const strokeClasses = {
+//     slate: 'stroke-foreground',
+//     blue: 'stroke-blue-500',
+//     red: 'stroke-red-500',
+//     green: 'stroke-emerald-500',
+//     white: 'stroke-background',
+// } as StrokeProps;
 
 // export const SpokeSpinner = ({
 //     size = 'md',

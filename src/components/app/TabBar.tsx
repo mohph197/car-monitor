@@ -6,7 +6,6 @@ import MetricCharts from './MetricCharts';
 import { MachineType } from '@/types/machine';
 import { useContext, useEffect, useState } from 'react';
 import { MachineDataContext } from '@/context/MachineDataConext';
-import useSWR from 'swr';
 import getSensorLogs from '@/actions/sender_logs';
 import { MetricFilterContext } from '@/context/MetricFilterContext';
 
