@@ -53,7 +53,10 @@ export default function LoginForm() {
             {isFormLoading ? (
                 <Loader />
             ) : (
-                <form onSubmit={loginHandler}>
+                <form
+                    onSubmit={loginHandler}
+                    className="flex flex-col border-2 border-black rounded-xl p-4 gap-4"
+                >
                     <div>
                         <label htmlFor="email">Email</label>
                         <input type="email" id="email" required />
@@ -62,7 +65,9 @@ export default function LoginForm() {
                         <label htmlFor="password">Password</label>
                         <input type="password" id="password" required />
                     </div>
-                    <button type="submit">Login</button>
+                    <button type="submit" className="self-start">
+                        Login
+                    </button>
                 </form>
             )}
         </>
