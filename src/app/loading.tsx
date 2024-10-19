@@ -1,4 +1,4 @@
-import Loader from '@/components/Loader';
+import Loader from '@/components/app/Loader';
 
 export default function LoadingPage() {
     return (

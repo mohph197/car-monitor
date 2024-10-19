@@ -21,8 +21,8 @@ export default function RootLayout({
     children: React.ReactNode;
 }>) {
     return (
-        <html lang="en">
-            <body className="antialiased min-h-screen">
+        <html className="font-geist-sans text-sm antialiased" lang="en">
+            <body className="min-h-screen">
                 <AuthProvider>
                     <Toaster />
                     {children}

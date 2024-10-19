@@ -1,6 +1,6 @@
 'use client';
 
-import Loader from '@/components/Loader';
+import Loader from '@/components/app/Loader';
 import { authRoutes } from '@/config/consts';
 import useServerUser from '@/hooks/server_user';
 import { removeTokens } from '@/lib/storage/tokens';
