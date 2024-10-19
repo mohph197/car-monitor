@@ -1,4 +1,4 @@
-export type MachineType = {
+export type MetricType = {
     id: string;
     name: string;
 };

@@ -1,9 +1,18 @@
-import { useRouter } from 'next/router';
+import { machines } from '@/config/consts';
+import MachineDetails from '@/containers/machine/page';
 
-export default function MachinePage() {
-    const router = useRouter();
-    router.
-    return <main>
+export default function MachinePage({
+    params,
+}: Readonly<{ params: { machine: string } }>) {
+    const machineInfo = machines.find((m) => m.id === params.machine);
 
-    </main>;
+    return (
+        <main>
+            {machineInfo ? (
+                <MachineDetails machine={machineInfo} />
+            ) : (
+                <div>Machine not found</div>
+            )}
+        </main>
+    );
 }
