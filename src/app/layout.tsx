@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import useUser from '@/hooks/user';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/router';
-import { authRoutes } from '@/config/consts';
+import { AuthProvider } from '@/context/AuthContext';
+import { Toaster } from 'react-hot-toast';
 
 // import localFont from 'next/font/local';
 // const geistSans = localFont({
@@ -22,36 +20,14 @@ export default function RootLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    const [latestRoute, setLatestRoute] = useState<string>('/');
-    const { currentUser, isAuthLoading } = useUser();
-    const { route, replace } = useRouter();
-
-    // Handle route changes based on auth state
-    useEffect(() => {
-        // If auth is still loading -> no need to check
-        if (isAuthLoading) return;
-
-        async function updateRoute() {
-            if (currentUser) {
-                if (authRoutes.includes(route)) {
-                    // If user is authenticated and tries to access an auth route
-                    //  -> redirect to latest route
-                    await replace(latestRoute);
-                }
-            } else if (!authRoutes.includes(route)) {
-                // If user is not authenticated and tries to access a protected route
-                //  -> redirect to login
-                setLatestRoute(route);
-                await replace(authRoutes[0]);
-            }
-        }
-
-        updateRoute();
-    }, [route, currentUser, isAuthLoading, latestRoute, replace]);
-
     return (
         <html lang="en">
-            <body className="antialiased">{children}</body>
+            <body className="antialiased min-h-screen">
+                <AuthProvider>
+                    <Toaster />
+                    {children}
+                </AuthProvider>
+            </body>
         </html>
     );
 }
