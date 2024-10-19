@@ -7,6 +7,9 @@ import { updateAccessToken, updateRefreshToken } from '@/lib/storage/tokens';
 import { FormEvent, useContext, useState } from 'react';
 import toast from 'react-hot-toast';
 import Loader from './Loader';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Button } from '@/components/ui/button';
 
 export default function LoginForm() {
     const { updateCurrentUser } = useContext(AuthContext);
@@ -57,17 +60,27 @@ export default function LoginForm() {
                     onSubmit={loginHandler}
                     className="flex flex-col border-2 border-black rounded-xl p-4 gap-4"
                 >
-                    <div>
-                        <label htmlFor="email">Email</label>
-                        <input type="email" id="email" required />
+                    <div className="grid w-full items-center gap-2">
+                        <Label htmlFor="email" className="text-base">
+                            Your Email
+                        </Label>
+                        <Input
+                            type="email"
+                            id="email"
+                            placeholder="Enter your email"
+                        />
                     </div>
-                    <div>
-                        <label htmlFor="password">Password</label>
-                        <input type="password" id="password" required />
+                    <div className="grid w-full items-center gap-2">
+                        <Label htmlFor="password" className="text-base">
+                            Password
+                        </Label>
+                        <Input
+                            type="password"
+                            id="password"
+                            placeholder="Enter your password"
+                        />
                     </div>
-                    <button type="submit" className="self-start">
-                        Login
-                    </button>
+                    <Button type="submit">Login</Button>
                 </form>
             )}
         </>
