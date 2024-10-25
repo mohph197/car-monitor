@@ -24,9 +24,9 @@ export default function RootLayout({
                 <AuthProvider>
                     <Toaster />
                     {children}
+                    <BeamsClient />
                 </AuthProvider>
                 <RouteEvents />
-                <BeamsClient />
             </body>
         </html>
     );
