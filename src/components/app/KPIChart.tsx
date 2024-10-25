@@ -97,11 +97,23 @@ export default function KPIChart({
             );
             return record?.value ?? null;
         });
+        const historyPointColors = dateLabels.map((recordDate) => {
+            const record = historyKPIData?.find(
+                (record) => record.timestamp === recordDate
+            );
+            return record?.status ? '#DC2626' : 'transparent';
+        });
         const predictedData = dateLabels.map((recordDate) => {
             const record = predictedKPIData?.find(
                 (record) => record.timestamp === recordDate
             );
             return record?.value ?? null;
+        });
+        const predictedPointColors = dateLabels.map((recordDate) => {
+            const record = predictedKPIData?.find(
+                (record) => record.timestamp === recordDate
+            );
+            return record?.status ? '#EAB308' : 'transparent';
         });
 
         const data = {
@@ -111,15 +123,22 @@ export default function KPIChart({
                     label: 'history',
                     data: historyData,
                     fill: false,
-                    borderColor: 'rgb(75, 192, 192)',
-                    tension: 0.1,
+                    borderColor: '#64748b',
+                    pointBackgroundColor: historyPointColors,
+                    tension: 0.3,
+                    pointRadius: 5,
+                    pointBorderColor: 'transparent',
                 },
                 {
                     label: 'predicted',
                     data: predictedData,
                     fill: false,
-                    borderColor: 'rgb(192, 75, 192)',
-                    tension: 0.1,
+                    borderColor: '#D4D4D4',
+                    pointBackgroundColor: predictedPointColors,
+                    tension: 0.3,
+                    pointRadius: 5,
+                    pointBorderColor: 'transparent',
+                    borderDash: [15, 10],
                 },
             ],
         };
@@ -141,6 +160,21 @@ export default function KPIChart({
                 plugins: {
                     legend: {
                         display: false,
+                    },
+                    tooltip: {
+                        backgroundColor: 'white',
+                        borderWidth: 1,
+                        borderColor: 'black',
+                        titleColor: 'black',
+                        bodyColor: 'black',
+                        caretSize: 0,
+                        titleFont: {
+                            size: 16,
+                            weight: 'normal',
+                        },
+                        bodyFont: {
+                            size: 14,
+                        },
                     },
                 },
             }}
