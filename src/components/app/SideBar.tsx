@@ -13,29 +13,31 @@ export default function SideBar() {
     const { removeCurrentUser } = useContext(AuthContext);
 
     return (
-        <aside className="flex flex-col items-stretch w-72 bg-[#F8FAFC]">
+        <aside className="flex flex-col h-full items-stretch min-w-72 w-72 bg-[#F8FAFC]">
             <Link className="px-4 py-6" href="/home">
                 <Image src={Logo} alt="Logo" />
             </Link>
             <hr />
-            <SideBarCategory
-                title="Main KPIs"
-                elements={kpis.map((kpi) => ({
-                    name: kpi.name,
-                    icon: `${kpi.id}.svg`,
-                    route: `/home/kpis/${kpi.id}`,
-                }))}
-            />
-            <div className="h-6"></div>
-            <hr />
-            <SideBarCategory
-                title="Machine Types"
-                elements={machines.map((machine) => ({
-                    name: `${machine.name}s`,
-                    icon: `${machine.id}.svg`,
-                    route: `/home/${machine.id}`,
-                }))}
-            />
+            <div className="flex-1 overflow-y-auto">
+                <SideBarCategory
+                    title="Main KPIs"
+                    elements={kpis.map((kpi) => ({
+                        name: kpi.name,
+                        icon: `${kpi.id}.svg`,
+                        route: `/home/kpis/${kpi.id}`,
+                    }))}
+                />
+                <div className="h-6"></div>
+                <hr />
+                <SideBarCategory
+                    title="Machine Types"
+                    elements={machines.map((machine) => ({
+                        name: `${machine.name}s`,
+                        icon: `${machine.id}.svg`,
+                        route: `/home/${machine.id}`,
+                    }))}
+                />
+            </div>
             <button
                 className="flex items-center gap-5 border border-red-500 rounded-lg m-4 px-4 py-2"
                 onClick={removeCurrentUser}

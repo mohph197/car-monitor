@@ -25,10 +25,6 @@ export default function TabBar({
             return;
         }
 
-        if (dataInterval) {
-            clearInterval(dataInterval);
-        }
-
         function updateData() {
             getSensorLogs(machine.id, dateRange?.from, dateRange?.to).then(
                 (data) => {
@@ -46,12 +42,17 @@ export default function TabBar({
             updateData();
         }, 20000);
 
-        setDataInterval(interval);
-    }, [dateRange]);
+        setDataInterval((oldInterval) => {
+            if (oldInterval) {
+                clearInterval(oldInterval);
+            }
+            return interval;
+        });
+    }, [dateRange, machine.id, setMachineData]);
 
     return machineMetrics.length > 0 ? (
         <Tabs defaultValue={machineMetrics[0].id}>
-            <TabsList>
+            <TabsList className="px-2">
                 {machineMetrics.map((metric) => (
                     <TabsTrigger key={metric.id} value={metric.id}>
                         {metric.name}
