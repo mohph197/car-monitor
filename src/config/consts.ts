@@ -174,10 +174,15 @@ export const lineChartColors = [
 export const kpis = [
     { id: 'stamping_press_efficiency', name: 'Stamping Press Efficiency' },
     { id: 'welding_robot_efficiency', name: 'Welding Robot Efficiency' },
-    { id: 'cnc_machine_utilization', name: 'CNC Machine Utilization' },
+    { id: 'c_n_c_machine_utilization', name: 'CNC Machine Utilization' },
     { id: 'painting_robot_performance', name: 'Painting Robot Performance' },
     { id: 'assembly_line_speed', name: 'Assembly Line Speed' },
     { id: 'quality_control_defect_rate', name: 'Quality Control Defect Rate' },
     { id: 'material_waste_percentage', name: 'Material Waste Percentage' },
     { id: 'machine_downtime', name: 'Machine Downtime' },
+    { id: 'energy_consumption_per_unit', name: 'Energy Consumption per Unit' },
+    { id: 'operator_efficiency', name: 'Operator Efficiency' },
+    { id: 'inventory_turnover_rate', name: 'Inventory Turnover Rate' },
+    { id: 'production_yield_rate', name: 'Production Yield Rate' },
+    { id: 'maintenance_cost_per_unit', name: 'Maintenance Cost per Unit' },
 ];
