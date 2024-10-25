@@ -12,13 +12,6 @@ export const machines: MachineType[] = [
     { id: 'leak_test', name: 'Leak Test Machine' },
 ];
 
-export const kpis = [
-    { id: 'energy', name: 'Energy' },
-    { id: 'performance', name: 'Performance' },
-    { id: 'repairs', name: 'Repairs' },
-    { id: 'defects', name: 'Defects' },
-];
-
 export const metrics = [
     { machine: 'welding', id: 'weld_temperature', name: 'Temperature' },
     { machine: 'welding', id: 'weld_current', name: 'Current' },
@@ -176,4 +169,15 @@ export const lineChartColors = [
     '#9333EA',
     '#C026D3',
     '#EC4899',
+];
+
+export const kpis = [
+    { id: 'stamping_press_efficiency', name: 'Stamping Press Efficiency' },
+    { id: 'welding_robot_efficiency', name: 'Welding Robot Efficiency' },
+    { id: 'cnc_machine_utilization', name: 'CNC Machine Utilization' },
+    { id: 'painting_robot_performance', name: 'Painting Robot Performance' },
+    { id: 'assembly_line_speed', name: 'Assembly Line Speed' },
+    { id: 'quality_control_defect_rate', name: 'Quality Control Defect Rate' },
+    { id: 'material_waste_percentage', name: 'Material Waste Percentage' },
+    { id: 'machine_downtime', name: 'Machine Downtime' },
 ];

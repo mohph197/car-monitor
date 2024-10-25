@@ -3,6 +3,9 @@ import './globals.css';
 import { AuthProvider } from '@/context/AuthContext';
 import { Toaster } from 'react-hot-toast';
 import { Inter } from 'next/font/google';
+import { RouteEvents } from '@/components/app/RouteEvents';
+import BeamsClient from '@/components/app/BeamsClient';
+
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -22,6 +25,8 @@ export default function RootLayout({
                     <Toaster />
                     {children}
                 </AuthProvider>
+                <RouteEvents />
+                <BeamsClient />
             </body>
         </html>
     );

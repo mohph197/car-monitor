@@ -1,9 +1,9 @@
-import LoginFormSection from '@/containers/auth/login-page/form-section';
+import LoginForm from '@/components/app/LoginForm';
 
 export default function Login() {
     return (
-        <main className="relative h-screen">
-            <LoginFormSection />
+        <main className="flex justify-center items-center h-screen">
+            <LoginForm />
         </main>
     );
 }

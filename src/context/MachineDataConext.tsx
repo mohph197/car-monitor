@@ -1,10 +1,6 @@
 'use client';
 
-import getSensorLogs from '@/actions/sender_logs';
-import { MachineType } from '@/types/machine';
 import { createContext, useContext, useEffect, useState } from 'react';
-import useSWR from 'swr';
-import { MetricFilterContext } from './MetricFilterContext';
 
 type MachineDataContextType = {
     machineData: any[];

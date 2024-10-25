@@ -18,12 +18,14 @@ export default function SideBarElement({
                     pathname === element.route ? 'bg-[#E2E8F0]' : ''
                 }`}
             >
-                <Image
-                    src={`/assets/${element.icon}`}
-                    width={24}
-                    height={24}
-                    alt={element.name}
-                />
+                {element.icon && (
+                    <Image
+                        src={`/assets/${element.icon}`}
+                        width={24}
+                        height={24}
+                        alt={element.name}
+                    />
+                )}
                 <span className="text-base">{element.name}</span>
             </Link>
         </li>

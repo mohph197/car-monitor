@@ -23,7 +23,6 @@ export default function SideBar() {
                     title="Main KPIs"
                     elements={kpis.map((kpi) => ({
                         name: kpi.name,
-                        icon: `${kpi.id}.svg`,
                         route: `/home/kpis/${kpi.id}`,
                     }))}
                 />
@@ -34,7 +33,7 @@ export default function SideBar() {
                     elements={machines.map((machine) => ({
                         name: `${machine.name}s`,
                         icon: `${machine.id}.svg`,
-                        route: `/home/${machine.id}`,
+                        route: `/home/machines/${machine.id}`,
                     }))}
                 />
             </div>
